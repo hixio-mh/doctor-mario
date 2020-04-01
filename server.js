@@ -1,3 +1,5 @@
+'use strict';
+
 // Dependencies
 var express = require('express');
 var http = require('http');
@@ -26,6 +28,10 @@ io.on('connection', function(socket) {
 });
 
 
-
-setInterval(function() {io.sockets.emit('matrix', 'hi'); }, 1000);
+let m = [
+    [0, 0, 2],
+    [1, 3, 4],
+    [2, 1, 0]
+];
+setInterval(function() {io.sockets.emit('matrix', m); }, 1000);
 //io.sockets.emit('matrix', 'hi');
