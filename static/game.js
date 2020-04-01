@@ -8,7 +8,7 @@ canvas.width = 400;
 canvas.height = 800;
 var context = canvas.getContext('2d');*/
 
-socket.on('penis', function(data) {
+socket.on('matrix', function(data) {
     //set background to dark gray
     console.log('we here');
     //context.fillStyle = '444444';
