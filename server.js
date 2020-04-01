@@ -27,5 +27,5 @@ io.on('connection', function(socket) {
 
 
 
-setInterval(function() {io.socket.emit('message', 'hi'); }, 1000);
+setInterval(function() {io.sockets.emit('penis', 'hi'); }, 1000);
 //io.sockets.emit('matrix', 'hi');
