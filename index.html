@@ -5,16 +5,23 @@
         <title>NOT Doctor Mario</title>
         <style media="screen">
             canvas {
+                border: 2px solid white;
+            }
+            #matrix {
                 width: 400px;
                 height: 800px;
-                border: 2px solid black;
+            }
+            #pillQueue {
+                width: 200px;
+                height: 350px;
+                vertical-align: top;
             }
         </style>
         <script src="/socket.io/socket.io.js" charset="utf-8"></script>
     </head>
-    <body>
+    <body bgcolor="black">
         <canvas id="matrix"></canvas>
-        <canvas id="pillPreviews"></canvas>
+        <canvas id="pillQueue"></canvas>
         <script src="/static/js/client.js" charset="utf-8" type="module"></script>
 
     </body>
