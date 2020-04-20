@@ -6,7 +6,7 @@ const http = require('http');
 const path = require('path');
 const socketIO = require('socket.io');
 
-const Game = require('./lib/server/game.js');
+const Room = require('./lib/server/room.js');
 
 //initialization
 var app = express();
@@ -29,20 +29,41 @@ server.listen(5000, function() {
 
 //setInterval(function() {io.sockets.emit('matrix', m); }, 1000);
 
+let room = new Room();
 
-// Add the WebSocket handlers
 io.on('connection', (socket) => {
-    console.log('client connected');
+    // console.log('client connected');
     //create new singleplayer game
-    let game = new Game();
-    //socket.on('inputState', (data) => game.update(data));
-    socket.on('inputState', (data) => {
-        game.update(data);
-        
-        socket.emit('gameView', game.getViewObject());
-    });
-    socket.emit('message', 'hello from the server');
-    socket.on('hello', () => console.log('hello'));
+    // let game = new Game();
+    // console.log(socket.id);
+    //
+    // socket.on('inputState', (data) => {
+    //     game.update(data);
+    //
+    //     socket.emit('gameView', game.getViewObject());
+    // });
+    // socket.emit('message', 'hello from the server');
+    // socket.on('hello', () => console.log('hello'));
 
-    //setInterval(() => socket.emit('matrix', game.matrix), 1000 / 60);
+    console.log('new client connected');
+    room.addPlayer(socket);
+
+    socket.on('username', (data) => {
+        // TODO: refactor this constant
+        const MAX_USERNAME_LENGTH = 12;
+        room.setPlayerUsername(socket.id, data.substring(0, MAX_USERNAME_LENGTH));
+    });
+
+    socket.on('inputState', (data) => {
+      room.updatePlayerInputState(socket.id, data);
+    });
+
+    socket.on('disconnect', () => {
+      room.removePlayer(socket.id);
+    })
 });
+
+setInterval(() => {
+    room.update();
+    room.sendState();
+}, 1000/60);
