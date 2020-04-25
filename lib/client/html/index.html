@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>NOT Doctor Mario</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+    <div class="topnav">
+        <a class="active" href="/">Multiplayer</a>
+        <a href="/singleplayer">Singleplayer</a>
+        <a href="/tutorial">Tutorial</a>
+        <a href="/contact">Contact</a>
+        <a href="/about">About</a>
+    </div>
+
+    <canvas id="matrix"></canvas>
+    <canvas id="pillQueue"></canvas>
+    <canvas id="opponents"></canvas>
+
+    <div id="usernameSubmission">
+        <p>Enter a username:</p>
+        <input type="text" id="inputUsername" />
+        <button id="buttonSubmitUsername">Submit</button>
+    </div>
+
+    <script src="/static/js/client.js" charset="utf-8" type="module"></script>
+
+
+</body>
+
+</html>

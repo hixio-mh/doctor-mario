@@ -20,7 +20,23 @@ app.use('/static', express.static(__dirname + '/lib/client'));
 
 //Routing
 app.get('/', function(request, response) {
-    response.sendFile(path.join(__dirname, '/index.html'));
+    response.sendFile(path.join(__dirname, '/lib/client/html/index.html'));
+});
+
+app.get('/singleplayer', function(request, response) {
+    response.sendFile(path.join(__dirname, '/lib/client/html/singleplayer.html'));
+});
+
+app.get('/tutorial', function(request, response) {
+    response.sendFile(path.join(__dirname, '/lib/client/html/tutorial.html'));
+});
+
+app.get('/contact', function(request, response) {
+    response.sendFile(path.join(__dirname, '/lib/client/html/contact.html'));
+});
+
+app.get('/about', function(request, response) {
+    response.sendFile(path.join(__dirname, '/lib/client/html/about.html'));
 });
 
 server.listen(5000, function() {
