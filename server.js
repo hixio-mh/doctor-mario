@@ -1,12 +1,20 @@
 'use strict';
 
 // Dependencies
-const express = require('express');
-const http = require('http');
-const path = require('path');
-const socketIO = require('socket.io');
+// const express = import('express');
+// const http = import('http');
+// const path = import('path');
+// const socketIO = import('socket.io');
+import express from 'express';
+import http from 'http';
+import path from 'path';
+import socketIO from 'socket.io';
 
-const Room = require('./lib/server/room.js');
+// since this now uses es6 modules for easy importing, __dirname has to be manually set here
+// also for some reason there's an extra / at the start so it gets chopped off
+const __dirname = path.dirname(new URL(import.meta.url).pathname).substring(1);
+
+import Room from './lib/server/room.js';
 
 //initialization
 var app = express();
@@ -14,9 +22,10 @@ var server = http.Server(app);
 var io = socketIO(server);
 
 
-
 app.set('port', 5000);
 app.use('/static', express.static(__dirname + '/lib/client'));
+app.use('/shared', express.static(__dirname + '/lib/shared'));
+
 
 //Routing
 app.get('/', function(request, response) {
