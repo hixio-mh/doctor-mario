@@ -74,8 +74,8 @@ io.on('connection', (socket) => {
     room.addPlayer(socket);
 
     socket.on('username', (data) => {
-        // TODO: refactor this constant
-        const MAX_USERNAME_LENGTH = 12;
+        // this isn't really necessary since max length is restricted in the field itself, but this could prevent against someone being sneaky
+        const MAX_USERNAME_LENGTH = 64;
         room.setPlayerUsername(socket.id, data.substring(0, MAX_USERNAME_LENGTH));
     });
 

@@ -4,6 +4,16 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h1 {
+    padding-right: 60px;
+    padding-left: 20px;
+}
+
+p {
+    padding-right: 60px;
+    padding-left: 20px;
+}
+
 canvas {
     border: 2px solid white;
 }
