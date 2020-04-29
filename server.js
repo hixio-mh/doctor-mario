@@ -12,11 +12,11 @@ import socketIO from 'socket.io';
 
 // since this now uses es6 modules for easy importing, __dirname has to be manually set here
 // also for some reason there's an extra / at the start so it has to get chopped off if it's being hosted locally
-let dir = path.dirname(new URL(import.meta.url).pathname
+let dir = path.dirname(new URL(import.meta.url).pathname);
 if (dir.substring(1, 3) == "C:") {
     dir = dir.substring(1);
 }
-const __dirname = 1;
+const __dirname = dir;
 const PORT = process.env.PORT || 5000;
 
 import Room from './lib/server/room.js';
