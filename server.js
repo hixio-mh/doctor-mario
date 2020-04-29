@@ -13,6 +13,7 @@ import socketIO from 'socket.io';
 // since this now uses es6 modules for easy importing, __dirname has to be manually set here
 // also for some reason there's an extra / at the start so it gets chopped off
 const __dirname = path.dirname(new URL(import.meta.url).pathname).substring(1);
+const PORT = process.env.PORT || 5000;
 
 import Room from './lib/server/room.js';
 
@@ -22,7 +23,7 @@ var server = http.Server(app);
 var io = socketIO(server);
 
 
-app.set('port', 5000);
+app.set('port', PORT);
 app.use('/static', express.static(__dirname + '/lib/client'));
 app.use('/shared', express.static(__dirname + '/lib/shared'));
 
@@ -48,7 +49,7 @@ app.get('/about', function(request, response) {
     response.sendFile(path.join(__dirname, '/lib/client/html/about.html'));
 });
 
-server.listen(5000, function() {
+server.listen(PORT, function() {
     console.log('Starting server on port 5000');
 });
 
