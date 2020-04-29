@@ -4,6 +4,7 @@
     "description": "Sleek, modern, multiplayer, high-speed block-matching puzzle game inspired by Dr. Mario",
     "main": "index.js",
     "scripts": {
+        "start": "node server.js"
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Levi Bloch",
