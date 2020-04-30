@@ -23,32 +23,35 @@ var io = socketIO(server);
 
 
 app.set('port', 5000);
-app.use('/static', express.static(__dirname + '/lib/client'));
-app.use('/shared', express.static(__dirname + '/lib/shared'));
+app.use('/static', express.static('./lib/client'));
+app.use('/shared', express.static('./lib/shared'));
 
+function sendClientHTML(p, resp) {
+    resp.sendFile(path.join(__dirname, "lib/client/html", p), { root: "/" })
+}
 
 //Routing
-app.get('/', function(request, response) {
-    response.sendFile(path.join(__dirname, '/lib/client/html/index.html'));
+app.get('/', function (request, response) {
+    sendClientHTML("index.html", response)
 });
 
-app.get('/singleplayer', function(request, response) {
-    response.sendFile(path.join(__dirname, '/lib/client/html/singleplayer.html'));
+app.get('/singleplayer', function (request, response) {
+    sendClientHTML("singleplayer.html", response)
 });
 
-app.get('/tutorial', function(request, response) {
-    response.sendFile(path.join(__dirname, '/lib/client/html/tutorial.html'));
+app.get('/tutorial', function (request, response) {
+    sendClientHTML("tutorial.html", response)
 });
 
-app.get('/contact', function(request, response) {
-    response.sendFile(path.join(__dirname, '/lib/client/html/contact.html'));
+app.get('/contact', function (request, response) {
+    sendClientHTML("contact.html", response)
 });
 
-app.get('/about', function(request, response) {
-    response.sendFile(path.join(__dirname, '/lib/client/html/about.html'));
+app.get('/about', function (request, response) {
+    sendClientHTML("about.html", response)
 });
 
-server.listen(5000, function() {
+server.listen(5000, function () {
     console.log('Starting server on port 5000');
 });
 
@@ -80,15 +83,15 @@ io.on('connection', (socket) => {
     });
 
     socket.on('inputState', (data) => {
-      room.updatePlayerInputState(socket.id, data);
+        room.updatePlayerInputState(socket.id, data);
     });
 
     socket.on('disconnect', () => {
-      room.removePlayer(socket.id);
+        room.removePlayer(socket.id);
     })
 });
 
 setInterval(() => {
     room.update();
     room.sendState();
-}, 1000/60);
+}, 1000 / 60);
