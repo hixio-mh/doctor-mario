@@ -16,15 +16,16 @@
     background-color: white;
     display: flex;
     color:black;
-    padding: 10px;
     flex-direction: column;
     pointer-events: all;
+    justify-content: space-between;
 }
 
 .input-config {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 10px;
 }
 
@@ -36,4 +37,39 @@
     width: 100px;
     height: 14pt;
     margin-left: 10px;
+    margin-right: 60%;
+}
+
+.tabnav {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    padding-right: 10px;
+}
+
+.settings-tab {
+    border-width: 1px;
+    border-color: black;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    padding: 10px;
+    user-select: none;
+    cursor: pointer;
+    background-color: grey;
+    color: white;
+    flex-grow: 1;
+}
+
+.selected {
+    background-color: white;
+    color: black;
+    border-bottom-style: none;
+}
+
+.settings-tab-body {
+    padding: 10px;
+}
+
+.settings-footer {
+    margin: 10px;
 }
