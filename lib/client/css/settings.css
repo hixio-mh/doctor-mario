@@ -1,8 +1,11 @@
 :root {
     --theme-bg: rgb(24, 25, 26);
-    --theme-bg-2: rgb(42, 43, 44);
+    --theme-bg-2: rgb(55, 56, 58);
     --theme-text: rgb(185, 185, 185);
-}  
+    --theme-selected: rgb(64, 64, 80);
+    --theme-hover: rgb(65, 66, 68);
+    --theme-border: rgb(72, 74, 77);
+}
 
 
 #settings-container {
@@ -114,4 +117,17 @@
     margin-left: 10px;
     margin-right: 10px;
     border: 1px solid var(--theme-bg-2);
+}
+
+.theme-button {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.selected {
+    background-color: var(--theme-selected);
+}
+
+.selected:hover {
+    background-color: var(--theme-selected);
 }
