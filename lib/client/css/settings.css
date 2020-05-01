@@ -1,3 +1,10 @@
+:root {
+    --theme-bg: rgb(24, 25, 26);
+    --theme-bg-2: rgb(42, 43, 44);
+    --theme-text: rgb(185, 185, 185);
+}  
+
+
 #settings-container {
     display: flex;
     position: absolute;
@@ -13,9 +20,9 @@
 #settings-window {
     width: 50%;
     height: 50%;
-    background-color: rgb(24, 25, 26);
+    background-color: var(--theme-bg);
     display: flex;
-    color:rgb(185, 185, 185);
+    color: var(--theme-text);
     flex-direction: column;
     pointer-events: all;
     justify-content: space-between;
@@ -57,14 +64,13 @@
 }
 
 .settings-tab {
-    border-width: 1px;
-    border-color: black;
+    border-width: 2px;
+    border-color: var(--theme-bg);
     border-right-style: solid;
-    border-bottom-style: solid;
     padding: 10px;
     user-select: none;
     cursor: pointer;
-    background-color: rgb(58, 60, 61);
+    background-color: var(--theme-bg-2);
     color: white;
     flex-grow: 1;
 }
@@ -75,11 +81,11 @@
 
 
 .selected:hover {
-    background-color:rgb(24, 25, 26);
+    background-color:var(--theme-bg);
 }
 
 .selected {
-    background-color: rgb(24, 25, 26);
+    background-color: var(--theme-bg);
     color: white;
     border-bottom-style: none;
 }
@@ -93,9 +99,9 @@
 }
 
 .settings-footer > button {
-    background-color: rgb(42, 43, 44);
+    background-color: var(--theme-bg-2);
     border: none;
-    color: rgb(173, 175, 175);
+    color: var(--theme-text);
     font-size: 12pt;
     padding: 8px;
 }
@@ -107,5 +113,5 @@
 .settings-divider {
     margin-left: 10px;
     margin-right: 10px;
-    border: 1px solid rgb(53, 54, 56);
+    border: 1px solid var(--theme-bg-2);
 }

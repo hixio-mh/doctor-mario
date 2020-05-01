@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <title>NOT Doctor Mario</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/static/css/settings.css"
+        />
+        <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+        <script src="/static/js/htmless.min.js"></script>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <title>NOT Doctor Mario</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/static/css/settings.css" />
-    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
-    <script src="/static/js/htmless.min.js"></script>
-</head>
+    <body>
+        <div class="topnav">
+            <a class="active" href="/">Multiplayer</a>
+            <a href="/singleplayer">Singleplayer</a>
+            <a href="/tutorial">Tutorial</a>
+            <a href="/contact">Contact</a>
+            <a href="/about">About</a>
+        </div>
 
-<body>
+        <div class="main">
+            <canvas id="matrix" width="400" height="760"></canvas>
+            <canvas id="pillQueue"></canvas>
+            <canvas id="opponents"></canvas>
 
-    <div class="topnav">
-        <a class="active" href="/">Multiplayer</a>
-        <a href="/singleplayer">Singleplayer</a>
-        <a href="/tutorial">Tutorial</a>
-        <a href="/contact">Contact</a>
-        <a href="/about">About</a>
-    </div>
+            <div id="usernameSubmission">
+                <p>Enter a username:</p>
+                <input type="text" id="inputUsername" />
+                <button id="buttonSubmitUsername">Submit</button>
+            </div>
+            <button onclick="openSettingsWindow();">Settings</button>
+        </div>
 
-    <canvas id="matrix"></canvas>
-    <canvas id="pillQueue"></canvas>
-    <canvas id="opponents"></canvas>
+        <div id="settings-container"></div>
 
-    <div id="usernameSubmission">
-        <p>Enter a username:</p>
-        <input type="text" id="inputUsername" />
-        <button id="buttonSubmitUsername">Submit</button>
-    </div>
-    <button onclick="openSettingsWindow();">Settings</button>
-
-    <div id="settings-container"></div>
-
-    <script src="/static/js/input.js" charset="utf-8"></script>
-    <script src="/static/js/client.js" charset="utf-8" type="module"></script>
-
-</body>
-
+        <script src="/static/js/input.js" charset="utf-8"></script>
+        <script
+            src="/static/js/client.js"
+            charset="utf-8"
+            type="module"
+        ></script>
+    </body>
 </html>

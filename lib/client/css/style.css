@@ -1,16 +1,30 @@
+:root {
+  --theme-bg: rgb(24, 25, 26);
+  --theme-bg-2: rgb(55, 56, 58);
+  --theme-text: rgb(185, 185, 185);
+  --theme-select: rgb(64, 64, 80);
+  --theme-border: rgb(72, 74, 77);
+}  
+
+
 body {
-    background-color: black;
-    color: white;
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.main {
+  padding: 20px;
 }
 
 canvas {
-    border: 2px solid white;
+    border: 2px solid var(--theme-border);
 }
 
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #004488;
+  background-color: var(--theme-bg-2);
   overflow: hidden;
 }
 
@@ -26,19 +40,17 @@ canvas {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: var(--theme-select);
   color: black;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #4CAF50;
+  background-color: var(--theme-select);
   color: white;
 }
 
 #matrix {
-    width: 400px;
-    height: 760px;
     vertical-align: top;
 }
 #pillQueue {
