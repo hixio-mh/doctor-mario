@@ -15,6 +15,7 @@ import socketIO from "socket.io";
 const __dirname = path.dirname(new URL(import.meta.url).pathname).substring(1);
 
 import Room from "./lib/server/room.js";
+import censor from "./lib/shared/js/censor.js";
 import { platform } from "os";
 
 //initialization
@@ -79,11 +80,13 @@ io.on("connection", (socket) => {
 
     socket.on("username", (data) => {
         // TODO: refactor this constant
-        const MAX_USERNAME_LENGTH = 12;
+        const MAX_USERNAME_LENGTH = 32;
+        let validatedUsername = censor(data.substring(0, MAX_USERNAME_LENGTH));
         room.setPlayerUsername(
             socket.id,
-            data.substring(0, MAX_USERNAME_LENGTH)
+            validatedUsername
         );
+        socket.emit("recieveUsername", validatedUsername);
     });
 
     socket.on("inputState", (data) => {
