@@ -5,8 +5,10 @@
     <meta charset="utf-8">
     <title>NOT Doctor Mario</title>
     <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/settings.css" />
     <script src="/socket.io/socket.io.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+    <script src="/static/js/htmless.min.js"></script>
 </head>
 
 <body>
@@ -28,6 +30,9 @@
         <input type="text" id="inputUsername" />
         <button id="buttonSubmitUsername">Submit</button>
     </div>
+    <button onclick="openSettingsWindow();">Settings</button>
+
+    <div id="settings-container"></div>
 
     <script src="/static/js/input.js" charset="utf-8"></script>
     <script src="/static/js/client.js" charset="utf-8" type="module"></script>
