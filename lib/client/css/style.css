@@ -81,11 +81,16 @@ button {
     color: var(--theme-text);
     font-size: 12pt;
     padding: 8px;
+    user-select: none;
 }
 
 button:hover {
     background-color: var(--theme-hover);
 }
+button:active {
+    background-color: var(--theme-selected);
+}
+
 input {
     font-size: 12pt;
     color: var(--theme-text);
