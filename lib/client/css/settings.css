@@ -140,12 +140,12 @@
     margin-right: 10px;
 }
 
-.selected {
-    background-color: var(--theme-selected);
+.tab-selected {
+    background-color: var(--theme-bg);
 }
 
-.selected:hover {
-    background-color: var(--theme-selected);
+.tab-selected:hover {
+    background-color: var(--theme-bg);
 }
 
 .color-swab {
@@ -155,4 +155,12 @@
     margin-bottom: 10px;
     flex-grow: 1;
     border-radius: 100%;
+}
+
+.opt-selected {
+    background-color: var(--theme-selected);
+}
+
+.opt-selected:hover {
+    background-color: var(--theme-selected);
 }
