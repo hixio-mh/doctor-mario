@@ -62,18 +62,6 @@ server.listen(PORT, function() {
 let room = new Room();
 
 io.on('connection', (socket) => {
-    // console.log('client connected');
-    //create new singleplayer game
-    // let game = new Game();
-    // console.log(socket.id);
-    //
-    // socket.on('inputState', (data) => {
-    //     game.update(data);
-    //
-    //     socket.emit('gameView', game.getViewObject());
-    // });
-    // socket.emit('message', 'hello from the server');
-    // socket.on('hello', () => console.log('hello'));
 
     console.log('new client connected');
     room.addPlayer(socket);
@@ -84,8 +72,8 @@ io.on('connection', (socket) => {
         room.setPlayerUsername(socket.id, data.substring(0, MAX_USERNAME_LENGTH));
     });
 
-    socket.on('inputState', (data) => {
-      room.updatePlayerInputState(socket.id, data);
+    socket.on('pillPlaced', (data) => {
+      room.validatePillPlacement(socket.id, data);
     });
 
     socket.on('disconnect', () => {
