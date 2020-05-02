@@ -122,6 +122,24 @@
 .theme-button {
     width: 100%;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--theme-bg-2);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.theme-button:hover {
+    background-color: var(--theme-hover);
+}
+
+.palette {
+    width: 60px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    filter: brightness(50%);
 }
 
 .selected {
@@ -130,4 +148,8 @@
 
 .selected:hover {
     background-color: var(--theme-selected);
+}
+
+.color-swab {
+    flex-grow: 1;
 }
