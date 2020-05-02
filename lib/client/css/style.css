@@ -1,7 +1,21 @@
+:root {
+    --theme-bg: rgb(24, 25, 26);
+    --theme-bg-2: rgb(55, 56, 58);
+    --theme-text: rgb(185, 185, 185);
+    --theme-selected: rgb(64, 64, 80);
+    --theme-hover: rgb(65, 66, 68);
+    --theme-border: rgb(72, 74, 77);
+}
+
 body {
-    background-color: black;
-    color: white;
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.main {
+    padding: 20px;
 }
 
 h1 {
@@ -15,40 +29,38 @@ p {
 }
 
 canvas {
-    border: 2px solid white;
+    border: 2px solid var(--theme-border);
 }
 
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #004488;
-  overflow: hidden;
+    background-color: var(--theme-bg-2);
+    overflow: hidden;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+    background-color: var(--theme-selected);
+    color: black;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #4CAF50;
-  color: white;
+    background-color: var(--theme-selected);
+    color: white;
 }
 
 #matrix {
-    width: 400px;
-    height: 760px;
     vertical-align: top;
 }
 #pillQueue {
@@ -61,4 +73,24 @@ canvas {
     height: 800px;
     vertical-align: top;
     float: right;
+}
+
+button {
+    background-color: var(--theme-bg-2);
+    border: none;
+    color: var(--theme-text);
+    font-size: 12pt;
+    padding: 8px;
+}
+
+button:hover {
+    background-color: var(--theme-hover);
+}
+input {
+    font-size: 12pt;
+    color: var(--theme-text);
+    padding: 8px;
+    background-color: rgb(42, 43, 44);
+    /* border: 1px solid rgba(185, 185, 185, 0.404); */
+    border: none;
 }

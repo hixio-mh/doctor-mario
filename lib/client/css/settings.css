@@ -1,0 +1,166 @@
+:root {
+    --theme-bg: rgb(24, 25, 26);
+    --theme-bg-2: rgb(55, 56, 58);
+    --theme-text: rgb(185, 185, 185);
+    --theme-selected: rgb(64, 64, 80);
+    --theme-hover: rgb(65, 66, 68);
+    --theme-border: rgb(72, 74, 77);
+}
+
+
+#settings-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+#settings-window {
+    width: 50%;
+    height: 50%;
+    background-color: var(--theme-bg);
+    display: flex;
+    color: var(--theme-text);
+    flex-direction: column;
+    pointer-events: all;
+    justify-content: space-between;
+    border: rgb(47, 49, 51) 1px solid;
+}
+
+.input-config {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.input-config > p {
+    margin: 0;
+}
+
+.input-capture {
+    width: 100px;
+    height: 14pt;
+    margin-left: 10px;
+    margin-right: 60%;
+    background-color: rgb(42, 43, 44);
+    /* border: 1px solid rgba(185, 185, 185, 0.404); */
+    border: none;
+    padding-left: 5px;
+    
+}
+.input-capture::placeholder {
+    color: rgb(185, 185, 185);
+}
+
+.tabnav {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    padding-right: 10px;
+}
+
+.settings-tab {
+    border-width: 2px;
+    border-color: var(--theme-bg);
+    border-right-style: solid;
+    padding: 10px;
+    user-select: none;
+    cursor: pointer;
+    background-color: var(--theme-bg-2);
+    color: white;
+    flex-grow: 1;
+}
+
+.settings-tab:hover {
+    background-color: rgb(76, 79, 80);
+}
+
+
+.selected:hover {
+    background-color:var(--theme-bg);
+}
+
+.selected {
+    background-color: var(--theme-bg);
+    color: white;
+    border-bottom-style: none;
+}
+
+.settings-tab-body {
+    padding: 10px;
+}
+
+.settings-footer {
+    margin: 10px;
+}
+
+.settings-footer > button {
+    background-color: var(--theme-bg-2);
+    border: none;
+    color: var(--theme-text);
+    font-size: 12pt;
+    padding: 8px;
+}
+
+.settings-footer > button:hover {
+    background-color: rgb(57, 58, 59);
+}
+
+.settings-divider {
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid var(--theme-bg-2);
+}
+
+.theme-button {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--theme-bg-2);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.theme-button:hover {
+    background-color: var(--theme-hover);
+}
+
+.palette {
+    display: flex;
+    flex-direction: row;
+    filter: brightness(70%);
+    margin-right: 10px;
+}
+
+.tab-selected {
+    background-color: var(--theme-bg);
+}
+
+.tab-selected:hover {
+    background-color: var(--theme-bg);
+}
+
+.color-swab {
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    border-radius: 100%;
+}
+
+.opt-selected {
+    background-color: var(--theme-selected);
+}
+
+.opt-selected:hover {
+    background-color: var(--theme-selected);
+}
